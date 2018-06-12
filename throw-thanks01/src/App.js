@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import RecipeReviewCard from'./RecipeReviewCard'
 
 class App extends Component {
   render() {
@@ -10,7 +11,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">thank you!!</h1>
         </header>
-        <div></div>
+        <div>
+          <RecipeReviewCard />
+        </div>
       </div>
     );
   }
