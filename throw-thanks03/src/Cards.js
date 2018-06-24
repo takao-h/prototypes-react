@@ -6,6 +6,10 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
+import PersonIcon from '@material-ui/icons/Person';
+import './App.css';
+import Paper from '@material-ui/core/Paper';
 
 const styles = {
   card: {
@@ -28,29 +32,55 @@ const styles = {
 function SimpleCard(props) {
   const { classes } = props;
   const bull = <span className={classes.bullet}>•</span>;
-
+  const persons = () => {
+    <PersonIcon color="disabled" className="home" style={{ fontSize: 70 }} />
+  }
   return (
     <div>
+      <Paper className={classes.root} elevation={4}>
       <Card className={classes.card}>
         <CardContent>
-          <Typography className={classes.title} color="textSecondary">
-            Word of the Day
-          </Typography>
-          <Typography variant="headline" component="h2">
-            be{bull}nev{bull}o{bull}lent
-          </Typography>
-          <Typography className={classes.pos} color="textSecondary">
-            adjective
-          </Typography>
-          <Typography component="p">
-            well meaning and kindly.<br />
-            {'"a benevolent smile"'}
-          </Typography>
+          <PersonIcon color="disabled" className="home" style={{ fontSize: 70 }} />
+          <form>
+          <TextField
+            defaultValue="39"
+            label="ポイント"
+            id="bootstrap-input"
+            InputProps={{
+              disableUnderline: true,
+              classes: {
+                root: classes.bootstrapRoot,
+                input: classes.bootstrapInput,
+              },
+            }}
+             InputLabelProps={{
+              shrink: true,
+              className: classes.bootstrapFormLabel,
+            }}
+          />
+            <TextField
+            defaultValue=""
+            label="メッセージ"
+            id="message"
+            InputProps={{
+              disableUnderline: true,
+              classes: {
+                root: classes.bootstrapRoot,
+                input: classes.bootstrapInput,
+              },
+            }}
+            InputLabelProps={{
+              shrink: true,
+              className: classes.bootstrapFormLabel,
+            }}
+           />
+          </form>
         </CardContent>
         <CardActions>
-          <Button size="small">Learn More</Button>
+          <Button class="thankyouButton" size="medium" style={{margin:'auto',width:'50%'}}>ありがとうをおくる</Button>
         </CardActions>
       </Card>
+      </Paper>
     </div>
   );
 }
